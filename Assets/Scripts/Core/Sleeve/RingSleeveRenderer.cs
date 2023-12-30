@@ -11,6 +11,5 @@ public class RingSleeveRenderer : MonoBehaviour
 	public void ChangeMaterial(Material material)
 	{
 		sleeve.material = material;
-		stand.material = material;
 	}
 }

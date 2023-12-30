@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6360046909378176980}
   - component: {fileID: 1916220536654671297}
   - component: {fileID: 3277424473966031437}
+  - component: {fileID: 4480752134892361285}
   m_Layer: 0
   m_Name: Stand
   m_TagString: Untagged
@@ -674,6 +675,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &4480752134892361285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220537053362438852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7691cf7c5c2334b858c60f25b3311e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ringSleeveRenderer: {fileID: 7674933539875551540}
 --- !u!1 &7669835470216915281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1344,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6233
+  m_VersionIndex: 6239
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1386,7 +1400,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f276e3b3c564192429e88f43aeb66e7a, type: 2}
+  - {fileID: 2100000, guid: 371e26b84a938c042b044870635c49dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1447,6 +1461,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7673226347265423580}
+  - component: {fileID: 1540642223996859153}
+  - component: {fileID: 7674933539875551540}
   m_Layer: 0
   m_Name: RingSleeve
   m_TagString: Untagged
@@ -1471,3 +1487,31 @@ Transform:
   - {fileID: 613319452725257915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1540642223996859153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7834701168747232053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25836ab74a679154585e8715a6e5646b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ringSleeveRenderer: {fileID: 7674933539875551540}
+--- !u!114 &7674933539875551540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7834701168747232053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1b70228861bbc44a673e0ea57140df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stand: {fileID: 6360046909378176980}
+  sleeve: {fileID: 8521424627182663636}
+  cylinder: {fileID: 8521424627182663636}

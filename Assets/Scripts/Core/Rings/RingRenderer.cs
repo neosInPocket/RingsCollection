@@ -1,6 +1,5 @@
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class RingRenderer : MonoBehaviour
@@ -9,19 +8,27 @@ public class RingRenderer : MonoBehaviour
 	[SerializeField] private Material[] materials;
 	[SerializeField] private float dissolveSpeed;
 	private Material currentMaterial;
+	private SphereCollider[] colliders;
+	public bool Dead { get; set; }
 
-	private void On()
+	private void Awake()
 	{
+		colliders = GetComponents<SphereCollider>();
+	}
+
+	public void Enable()
+	{
+		gameObject.SetActive(true);
+		EnableColliders(true);
 		SetRandomMaterial();
-		StopAllCoroutines();
 		StartCoroutine(Dissolve(false));
 	}
 
 	private void SetRandomMaterial()
 	{
 		Material material = materials[Random.Range(0, materials.Length)];
-		meshRenderer.material = material;
-		currentMaterial = material;
+		meshRenderer.material = new Material(material);
+		currentMaterial = meshRenderer.material;
 	}
 
 	public AvaliableColors GetCurrentColor()
@@ -33,15 +40,20 @@ public class RingRenderer : MonoBehaviour
 	{
 		StopAllCoroutines();
 		StartCoroutine(Dissolve(true));
+		EnableColliders(false);
 	}
 
 	private IEnumerator Dissolve(bool reverse)
 	{
-		var currentDissolveValue = currentMaterial.GetFloat("_Dissolve");
+		Dead = reverse;
+
+		float currentDissolveValue = 0;
 		float targetValue = 0;
 
-		if (!reverse)
+		if (reverse)
 		{
+			Dead = true;
+			currentMaterial.SetFloat("_Dissolve", 0);
 			targetValue = 1;
 			while (currentDissolveValue < 1)
 			{
@@ -52,6 +64,9 @@ public class RingRenderer : MonoBehaviour
 		}
 		else
 		{
+			currentMaterial.SetFloat("_Dissolve", 1);
+			currentDissolveValue = 1;
+
 			while (currentDissolveValue > 0)
 			{
 				currentDissolveValue -= dissolveSpeed * Time.deltaTime;
@@ -64,6 +79,14 @@ public class RingRenderer : MonoBehaviour
 		if (reverse)
 		{
 			gameObject.SetActive(false);
+		}
+	}
+
+	private void EnableColliders(bool value)
+	{
+		foreach (var collider in colliders)
+		{
+			collider.enabled = value;
 		}
 	}
 }

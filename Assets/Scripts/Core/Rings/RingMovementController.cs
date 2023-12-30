@@ -17,7 +17,7 @@ public class RingMovementController : MonoBehaviour
 	[SerializeField] private float maxVerticalSpeed;
 	[SerializeField] private float angleTreshold;
 	[SerializeField] private float pushRotatingSpeed;
-	private bool isBeingPushed;
+	public bool IsBeingPushed { get; set; }
 
 	private void Start()
 	{
@@ -32,12 +32,10 @@ public class RingMovementController : MonoBehaviour
 
 	private float LerpNormalRotation(Vector2 target, float speed)
 	{
-		//rigid.angularVelocity = Vector3.zero;
 		var currentDirection = target;
 		var direction = new Vector3(currentDirection.x, currentDirection.y, 0);
 		var angle = Vector2.Angle(direction, transform.forward);
 		var deltaPhi = speed * NormalDistribution(angle, angleTreshold) * Time.deltaTime;
-		Debug.Log(deltaPhi);
 
 		var crossProduct = Vector3.Cross(transform.forward, direction);
 		var cross = crossProduct.z;
@@ -99,7 +97,7 @@ public class RingMovementController : MonoBehaviour
 
 	private IEnumerator RotateNormalDirection(Vector3 target)
 	{
-		isBeingPushed = true;
+		IsBeingPushed = true;
 		float angle = 0;
 		if (target.y > transform.position.y)
 		{
@@ -107,6 +105,7 @@ public class RingMovementController : MonoBehaviour
 		}
 
 		angle = LerpNormalRotation(target, pushRotatingSpeed);
+		Debug.Log("Lerped");
 
 		while (angle > angleTreshold)
 		{
@@ -115,11 +114,17 @@ public class RingMovementController : MonoBehaviour
 			yield return new WaitForEndOfFrame();
 		}
 
-		isBeingPushed = false;
+		IsBeingPushed = false;
 	}
 
 	private float NormalDistribution(float x, float threshold)
 	{
-		return (1 - threshold) * Mathf.Exp(-(Mathf.Pow(x - 90f, 2) / 50f)) + threshold;
+		var result = (1 - threshold) * Mathf.Exp(-(Mathf.Pow(x - 90f, 2) / 50f)) + threshold;
+		return result;
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		StopAllCoroutines();
 	}
 }

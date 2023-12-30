@@ -20,9 +20,9 @@ public class RingPool : MonoBehaviour
 		Ring freeRing = rings.FirstOrDefault(x => !x.gameObject.activeSelf);
 		if (freeRing != null)
 		{
-			freeRing.gameObject.SetActive(true);
 			freeRing.transform.position = position;
 			freeRing.transform.eulerAngles = angles;
+			freeRing.Enable();
 			return freeRing;
 		}
 		else
@@ -31,6 +31,7 @@ public class RingPool : MonoBehaviour
 			instance.transform.position = position;
 			instance.transform.eulerAngles = angles;
 			rings.Add(instance);
+			instance.Enable();
 			return instance;
 		}
 	}

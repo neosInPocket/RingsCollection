@@ -11,16 +11,13 @@ public class RestrainingBarrier : MonoBehaviour
 
 	private void Start()
 	{
-		screenSize = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, -10f));
-		screenSize.x = Mathf.Abs(screenSize.x);
-		screenSize.y = Mathf.Abs(screenSize.y);
-		screenSize.z = 0;
+		screenSize = GameTools.ScreenSize();
 		SetPosition();
 	}
 
 	private void SetPosition()
 	{
 		transform.position = new Vector3(position * (screenSize.x + barrierWidth / 2), 0);
-		boxCollider.size = new Vector3(barrierWidth, 2 * screenSize.y, barrierDepth);
+		boxCollider.size = new Vector3(barrierWidth, 15 * screenSize.y, barrierDepth);
 	}
 }

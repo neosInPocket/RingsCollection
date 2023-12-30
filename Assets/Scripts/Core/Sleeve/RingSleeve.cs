@@ -6,6 +6,6 @@ public class RingSleeve : MonoBehaviour
 
 	public void ChangeMaterial(Material material)
 	{
-
+		ringSleeveRenderer.ChangeMaterial(material);
 	}
 }

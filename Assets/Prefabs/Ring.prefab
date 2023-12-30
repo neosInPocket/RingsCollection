@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigid: {fileID: 2574387917060533812}
   normalRotation: {x: 90, y: 0, z: 0}
-  maxRotationSpeed: 10
+  maxRotationSpeed: 1
   yAcceleration: 7
   xAcceleration: 3
   maxVerticalSpeed: 1
@@ -162,6 +162,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c44e9d0baf854334e8eda3c6d40fa342, type: 2}
   - {fileID: 2100000, guid: 1856360e0297d7d4cab4d357690b7431, type: 2}
   - {fileID: 2100000, guid: 18b5c8232ba647a4ebac6b805fea5a78, type: 2}
+  dissolveSpeed: 2
 --- !u!114 &9157361151353399735
 MonoBehaviour:
   m_ObjectHideFlags: 0
