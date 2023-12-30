@@ -32,7 +32,7 @@ public class RingMovementController : MonoBehaviour
 
 	private float LerpNormalRotation(Vector2 target, float speed)
 	{
-		rigid.angularVelocity = Vector3.zero;
+		//rigid.angularVelocity = Vector3.zero;
 		var currentDirection = target;
 		var direction = new Vector3(currentDirection.x, currentDirection.y, 0);
 		var angle = Vector2.Angle(direction, transform.forward);

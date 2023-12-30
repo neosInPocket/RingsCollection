@@ -46,7 +46,7 @@ Material:
     - _Color: {r: 1, g: 0.2971698, b: 0.2971698, a: 1}
     - _Color_1: {r: 5.9921575, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0.0009765625, g: 0, b: 0, a: 0}
-    - _MainColor: {r: 1.2154858, g: 0.012280362, b: 0, a: 1}
+    - _MainColor: {r: 2.9960783, g: 0.030270139, b: 0, a: 1}
     - _OffColor: {r: 1, g: 0.2971698, b: 0.2971698, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6435160812366792411
