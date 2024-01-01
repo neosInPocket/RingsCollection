@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 public class StandController : MonoBehaviour
 {
 	[SerializeField] private RingSleeveRenderer ringSleeveRenderer;
+	public Action OnRingScored { get; set; }
 
 	private void OnCollisionEnter(Collision collision)
 	{
@@ -10,15 +12,13 @@ public class StandController : MonoBehaviour
 		{
 			if (ring.Dead) return;
 
-			var circleEq = Mathf.Pow(ring.transform.position.x - ringSleeveRenderer.StandPosition.x, 2) + Mathf.Pow(ring.transform.position.z - ringSleeveRenderer.StandPosition.z, 2);
+			var circleEq =
+			Mathf.Pow(ring.transform.position.x - ringSleeveRenderer.StandPosition.x, 2) +
+			Mathf.Pow(ring.transform.position.z - ringSleeveRenderer.StandPosition.z, 2);
 
 			if (circleEq < Mathf.Pow(ringSleeveRenderer.SleeveRadius, 2))
 			{
-				Debug.Log("Point");
-			}
-			else
-			{
-				Debug.Log("NO POINT");
+				OnRingScored?.Invoke();
 			}
 
 			ring.Destroy();
