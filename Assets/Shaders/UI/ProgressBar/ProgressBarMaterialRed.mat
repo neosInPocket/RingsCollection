@@ -43,7 +43,7 @@ Material:
     m_Ints: []
     m_Floats:
     - BOOLEAN_DIRECTION_FROM_EULERANGLE: 0
-    - _Dissolve: 0
+    - _Dissolve: 0.33333334
     - _EdgeWidth: 0.1
     - _NoiseScale: 50
     - _NoiseThreshold: 0.01
