@@ -14,14 +14,16 @@ public class RingMovementController : MonoBehaviour
 	[SerializeField] private float maxRotationSpeed;
 	[SerializeField] private float yAcceleration;
 	[SerializeField] private float xAcceleration;
-	[SerializeField] private float maxVerticalSpeed;
+	private float maxVerticalSpeed;
 	[SerializeField] private float angleTreshold;
 	[SerializeField] private float pushRotatingSpeed;
+	[SerializeField] private float[] ySpeeds;
 	private bool isLerpRunning;
 
 	private void Start()
 	{
 		GameTools.ScreenSize();
+		maxVerticalSpeed = ySpeeds[SavesManager.RingVerticalSpeed];
 	}
 
 	private void Update()

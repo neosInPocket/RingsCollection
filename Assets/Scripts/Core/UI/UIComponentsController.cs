@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIComponentsController : MonoBehaviour
 {
@@ -54,5 +55,15 @@ public class UIComponentsController : MonoBehaviour
 	{
 		spawner.Toggle(true);
 		ringPushHandler.Enable();
+	}
+
+	public void NextLevel()
+	{
+		SceneManager.LoadScene("MainRingsScene");
+	}
+
+	public void ReturnToMain()
+	{
+		SceneManager.LoadScene("MainMenu");
 	}
 }

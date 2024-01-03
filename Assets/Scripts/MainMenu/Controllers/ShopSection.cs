@@ -20,8 +20,8 @@ public class ShopSection : MonoBehaviour
 		CheckPoints(lifesPoints, SavesManager.MaxLifes);
 		CheckPoints(speedPoints, SavesManager.RingVerticalSpeed);
 
-		lifesButton.interactable = SavesManager.MaxLifes <= 3 && SavesManager.CurrentCoins >= 100;
-		speedButton.interactable = SavesManager.RingVerticalSpeed <= 3 && SavesManager.CurrentCoins >= 40;
+		lifesButton.interactable = SavesManager.MaxLifes < 3 && SavesManager.CurrentCoins >= 100;
+		speedButton.interactable = SavesManager.RingVerticalSpeed < 3 && SavesManager.CurrentCoins >= 40;
 		coinsText.text = SavesManager.CurrentCoins.ToString();
 	}
 
@@ -52,7 +52,7 @@ public class ShopSection : MonoBehaviour
 
 		for (int i = 0; i < value; i++)
 		{
-			points[i].enabled = true;
+			points[i].gameObject.SetActive(true);
 		}
 	}
 }

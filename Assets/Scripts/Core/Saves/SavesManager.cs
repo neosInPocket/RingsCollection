@@ -8,6 +8,9 @@ public class SavesManager : MonoBehaviour
 	public static int FirstGamePassed;
 	public static int SkinIndex;
 	public static int CurrentCoins;
+	public static float MusicValue;
+	public static float SFXValue;
+
 
 	[SerializeField] private bool defaults;
 
@@ -30,6 +33,8 @@ public class SavesManager : MonoBehaviour
 		PlayerPrefs.SetInt("FirstGamePassed", FirstGamePassed);
 		PlayerPrefs.SetInt("SkinIndex", SkinIndex);
 		PlayerPrefs.SetInt("CurrentCoins", CurrentCoins);
+		PlayerPrefs.SetFloat("MusicValue", MusicValue);
+		PlayerPrefs.SetFloat("SFXValue", SFXValue);
 
 		PlayerPrefs.Save();
 	}
@@ -42,6 +47,8 @@ public class SavesManager : MonoBehaviour
 		FirstGamePassed = PlayerPrefs.GetInt("FirstGamePassed", 0);
 		SkinIndex = PlayerPrefs.GetInt("SkinIndex", 0);
 		CurrentCoins = PlayerPrefs.GetInt("CurrentCoins", 40);
+		MusicValue = PlayerPrefs.GetFloat("MusicValue", 1f);
+		SFXValue = PlayerPrefs.GetFloat("SFXValue", 1f);
 	}
 
 	private static void ClearData()
@@ -52,6 +59,8 @@ public class SavesManager : MonoBehaviour
 		FirstGamePassed = 0;
 		SkinIndex = 0;
 		CurrentCoins = 40;
+		MusicValue = 1f;
+		SFXValue = 1f;
 
 		Save();
 	}

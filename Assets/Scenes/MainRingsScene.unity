@@ -2224,7 +2224,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 770311474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1715629613}
+        m_TargetAssemblyTypeName: UIComponentsController, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &770311474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3202,6 +3214,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82915315125222262, guid: 70142c574eda8c946afcd53b4ac828d8,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.357
+      objectReference: {fileID: 0}
+    - target: {fileID: 82915315125222262, guid: 70142c574eda8c946afcd53b4ac828d8,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b3848d6900879843a1ffd2a0ce93090, type: 3}
     - target: {fileID: 198219184123330212, guid: 70142c574eda8c946afcd53b4ac828d8,
         type: 3}
       propertyPath: lengthInSec
@@ -3571,6 +3593,7 @@ MonoBehaviour:
   scoreHandler: {fileID: 1290706123}
   progressBar: {fileID: 1454898069}
   healthBar: {fileID: 803910048}
+  currentLevel: {fileID: 1487995108}
 --- !u!1 &1452014637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4830,7 +4853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a249c4c55450d341b8a9b805f84a28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaults: 1
+  defaults: 0
 --- !u!4 &1927684840
 Transform:
   m_ObjectHideFlags: 0
@@ -4943,7 +4966,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1961088840}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1715629613}
+        m_TargetAssemblyTypeName: UIComponentsController, Assembly-CSharp
+        m_MethodName: ReturnToMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1961088840
 MonoBehaviour:
   m_ObjectHideFlags: 0

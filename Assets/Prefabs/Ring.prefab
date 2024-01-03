@@ -142,9 +142,13 @@ MonoBehaviour:
   maxRotationSpeed: 1
   yAcceleration: 7
   xAcceleration: 3
-  maxVerticalSpeed: 1
   angleTreshold: 0.05
   pushRotatingSpeed: 10
+  ySpeeds:
+  - 2
+  - 1.66
+  - 1.33
+  - 1
 --- !u!114 &2270242304931947313
 MonoBehaviour:
   m_ObjectHideFlags: 0
