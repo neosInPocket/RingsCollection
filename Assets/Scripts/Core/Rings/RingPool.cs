@@ -43,4 +43,12 @@ public class RingPool : MonoBehaviour
 		var randomZ = Random.Range(0, 360f);
 		return Instantiate(position, new Vector3(randomX, randomY, randomZ));
 	}
+
+	public void Clear()
+	{
+		foreach (var ring in rings)
+		{
+			ring.gameObject.SetActive(false);
+		}
+	}
 }

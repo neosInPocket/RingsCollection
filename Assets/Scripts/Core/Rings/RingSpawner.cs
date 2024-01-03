@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
 
-public class RingSpawner : MonoBehaviour
+public class RingSpawner : Toggleable
 {
 	[SerializeField] private RingPool pool;
 	[SerializeField] private Vector2 xSpawnRange;
@@ -17,8 +16,6 @@ public class RingSpawner : MonoBehaviour
 	private void Start()
 	{
 		screenSize = GameTools.ScreenSize();
-		isSpawning = false;
-		isEnabled = true;
 	}
 
 	private void Update()
@@ -45,5 +42,22 @@ public class RingSpawner : MonoBehaviour
 		pool.InstantiateRandomRotation(randomPosition);
 		yield return new WaitForSeconds(Random.Range(spawnDelayRange.x, spawnDelayRange.y));
 		isSpawning = false;
+	}
+
+	public override void Enable()
+	{
+		isEnabled = true;
+		isSpawning = false;
+	}
+
+	public override void Disable()
+	{
+		isEnabled = false;
+		isSpawning = false;
+	}
+
+	public void Clear()
+	{
+		pool.Clear();
 	}
 }

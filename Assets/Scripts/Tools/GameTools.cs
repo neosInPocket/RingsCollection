@@ -25,20 +25,4 @@ public static class GameTools
 		Vector3 intersectionPoint = rayOrigin + distance * rayDirection;
 		return intersectionPoint;
 	}
-
-	public static Vector3 ScreenToWorldViaCollider<T>(Vector3 screenPosition) where T : Component
-	{
-		var ray = Camera.main.ScreenPointToRay(screenPosition);
-		var raycast = Physics.RaycastAll(ray);
-		var result = raycast.FirstOrDefault(x => x.collider.GetComponent<T>() != null);
-
-		if (result.collider != null)
-		{
-			return result.point;
-		}
-		else
-		{
-			return Vector3.zero;
-		}
-	}
 }
