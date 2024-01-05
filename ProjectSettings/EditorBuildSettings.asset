@@ -14,4 +14,46 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainRingsScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene.unity
+    guid: e6747d3dcc24e4f4cb301d58d481e554
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 1.unity
+    guid: 20d41d584b6c11643839ddbbd769784d
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 2.unity
+    guid: 6cbe634d4c26f184d8fa92fd3e45b534
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 3.unity
+    guid: 34b6575e08e395640b19ee15aca79c3a
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 4.unity
+    guid: 81f1898212bd57749973ec390818d09e
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 5.unity
+    guid: 1f0a54d3c27677c4988ca1a9f73ccf19
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 6.unity
+    guid: f196585a72d37af4d82b94d97373adcd
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 7.unity
+    guid: 5181f0b33fca0ac4b9235c2f45b35a2c
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 8.unity
+    guid: 08486a18bec135943aa852a7c967795c
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 9.unity
+    guid: 21e92522dbec1ba429b7400bd3e680fd
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 10.unity
+    guid: 195d5b608c82ec3468473fe1e65c8493
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 11.unity
+    guid: 581c88806781b3a4aa07240e3b7ea3d7
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 12.unity
+    guid: 9b5305e2ea9b5f642876bb6b2cb8b05e
+  - enabled: 1
+    path: Assets/Scenes/FallingBallScene 13.unity
+    guid: bdde525806129a042bc4419352e755c5
   m_configObjects: {}

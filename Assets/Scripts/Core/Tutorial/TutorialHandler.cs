@@ -14,6 +14,7 @@ public class TutorialHandler : MonoBehaviour
 	[SerializeField] private TMP_Text text;
 	[SerializeField] private GameObject tutorialPanel;
 	[SerializeField] private TMP_Text goalText;
+	[SerializeField] private GameObject levitatingBall;
 	private int currentPhase;
 	private Func<bool> nextPhase;
 
@@ -55,6 +56,7 @@ public class TutorialHandler : MonoBehaviour
 		Touch.onFingerDown -= OnNext;
 		ringPushHandler.Enable();
 		tutorialPanel.SetActive(false);
+		levitatingBall.SetActive(false);
 		tutorialSpawner.ProgressReached += Phase;
 		tutorialSpawner.RingPassed += OnRingPassed;
 		tutorialSpawner.Spawn();
@@ -77,6 +79,7 @@ public class TutorialHandler : MonoBehaviour
 		ringPushHandler.Disable();
 		tutorialSpawner.Clear();
 		tutorialPanel.SetActive(true);
+		levitatingBall.SetActive(true);
 		goalText.gameObject.SetActive(false);
 		Touch.onFingerDown += OnNext;
 	}

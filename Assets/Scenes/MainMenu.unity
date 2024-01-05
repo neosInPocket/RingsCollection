@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 4
-  m_AspectRatio: 0.5
+  m_AspectRatio: 0.4501953
 --- !u!114 &197854642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,7 +1912,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLINKO
+  m_text: Star Ball Fall
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0594722ed2005f4091edc1c9d2a6dcb, type: 2}
   m_sharedMaterial: {fileID: 3288732154793734156, guid: d0594722ed2005f4091edc1c9d2a6dcb,
